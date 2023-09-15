@@ -14,7 +14,7 @@ namespace figures_lib
         {
             set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Value of triangle side must be positive!");
                 }
@@ -31,7 +31,7 @@ namespace figures_lib
         {
             set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Value of triangle side must be positive!");
                 }
@@ -48,7 +48,7 @@ namespace figures_lib
         {
             set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Value of triangle side must be positive!");
                 }
@@ -111,7 +111,7 @@ namespace figures_lib
             for (int i = 0;i < _sides.Length;i++) {
                 curSideIterator.MoveNext();
                 var curSide = curSideIterator.Current;
-                _sides[i] = curSide < 1 ? throw new ArgumentException("Side of triangle must be positive (> 0) number") : curSide;
+                _sides[i] = curSide > 0 ? curSide: throw new ArgumentException("Side of triangle must be positive (> 0) number");
                
             }
         }

@@ -109,9 +109,10 @@ namespace figures_lib
 
             var curSideIterator = values.GetEnumerator();
             for (int i = 0;i < _sides.Length;i++) {
+                curSideIterator.MoveNext();
                 var curSide = curSideIterator.Current;
                 _sides[i] = curSide < 1 ? throw new ArgumentException("Side of triangle must be positive (> 0) number") : curSide;
-                curSideIterator.MoveNext();
+               
             }
         }
         
